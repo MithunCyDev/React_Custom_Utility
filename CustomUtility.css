@@ -1,0 +1,144 @@
+.CustomFormLabel {
+  color: #48a749;
+  font-weight: 600;
+}
+
+.customInput {
+  padding: 5px 15px;
+  min-width: 50px;
+}
+
+.customInput:focus {
+  outline: none;
+  border: 1px solid #48a749;
+}
+
+.defaultInput:focus {
+  outline: none;
+  border: 1px solid #48a749;
+}
+.defaultInputLabel {
+  color: #48a749;
+  font-weight: 600;
+}
+
+.defaultInput {
+  padding: 5px 10px;
+  min-width: 60px;
+  width: 80px;
+  background-color: rgb(240, 240, 240);
+}
+
+.defaultInputBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.customButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 45px;
+  background-color: #48a749;
+  color: white;
+  font-weight: 600;
+  border-radius: 2px;
+}
+.customButton:hover {
+  background-color: #2d862e;
+  transition: 0.2s ease all;
+}
+.customNormalButton {
+  padding: 7px 25px;
+  background-color: #48a749;
+  color: white;
+  font-weight: 600;
+  border-radius: 2px;
+  margin: 0 5px;
+}
+.customNormalBtn {
+  padding: 7px 25px;
+  background-color: #dadada;
+  color: rgb(29, 29, 29);
+  font-weight: 600;
+  border-radius: 2px;
+  margin: 0 5px;
+}
+.customNormalButton:hover {
+  background-color: #2d862e;
+  transition: 0.2s ease all;
+}
+.customNormalBtn:hover {
+  background-color: #b3b3b3;
+  transition: 0.2s ease all;
+}
+
+.submitButton {
+  padding: 8px 45px;
+  background-color: #48a749;
+  color: white;
+  font-weight: 600;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.submitButton:hover {
+  background-color: #2d862e;
+  transition: 0.2s ease all;
+}
+
+.draftButton {
+  padding: 8px 40px;
+  border: 1px solid #dadada;
+  color: black;
+  font-weight: 600;
+  margin-right: 20px;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.draftButton:hover {
+  background-color: #dadada;
+  transition: 0.2s ease all;
+}
+
+.cancelButton {
+  padding: 8px 40px;
+  background-color: #848484;
+  color: white;
+  font-weight: 600;
+  margin-right: 20px;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.cancelButton:hover {
+  background-color: #d92d20;
+  transition: 0.2s ease all;
+}
+
+.resetButton {
+  padding: 7px 18px;
+  margin-right: 10px;
+  background-color: #cd0202;
+  color: white;
+  font-weight: 600;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+.resetButton:hover {
+  background-color: #ac0000;
+  transition: 0.2s ease all;
+}
+
+.Tab-button {
+  border: 1px solid #dadada;
+  color: black;
+  padding: 10px 35px;
+  font-weight: 600;
+}
+
+.Tab-button.active {
+  background-color: #dadada;
+}
