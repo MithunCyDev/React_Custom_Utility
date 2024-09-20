@@ -130,6 +130,62 @@ const TabButton = ({
   </button>
 );
 
+
+
+const FormModel = ({
+  isOpen,
+  onClose,
+  children,
+  modelTitle,
+  submitButtonType,
+  submitOnClick,
+  submitButtonText = "Submit",
+  submitCondition,
+  closeButton = false,
+  closeButtonType,
+  closeButtonOnclick,
+  closeButtonText = "Close",
+  modelStyle,
+  modelContentStyle,
+  modelTitleStyle,
+}) => (
+  <Modal
+    open={isOpen}
+    onClose={onClose}
+    closeAfterTransition
+    slots={{ backdrop: Backdrop }}
+    style={modelStyle}
+    className="form_model"
+  >
+    <div style={modelContentStyle} className="model_content">
+      <p style={modelTitleStyle} className="modal_title">
+        {modelTitle}
+      </p>
+      <IoClose className="close-button" onClick={onClose} />
+      <div>{children}</div>
+      <div className="buttonModelGroup">
+        {closeButton && (
+          <button
+            className="cancelButton"
+            type={closeButtonType}
+            onClick={closeButtonOnclick}
+          >
+            {closeButtonText}
+          </button>
+        )}
+        <button
+          disabled={submitCondition}
+          className={!submitCondition ? "submitButton" : "disable_button"}
+          type={submitButtonType}
+          onClick={submitOnClick}
+        >
+          {submitButtonText}
+        </button>
+      </div>
+    </div>
+  </Modal>
+);
+
 export {
   CustomInput,
   customSelectInput,
@@ -141,4 +197,5 @@ export {
   CancelButton,
   DraftButton,
   TabButton,
+  FormModel
 };
