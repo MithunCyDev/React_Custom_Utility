@@ -186,6 +186,95 @@ const FormModel = ({
   </Modal>
 );
 
+import React from "react";
+
+const FilteredInput = ({
+  label,
+  name,
+  placeholder,
+  value,
+  filteredOptions,
+  onChange,
+  onSelect,
+  showDropdown,
+  setShowDropdown,
+  activeField,
+  width,
+  dropDownWidth,
+  handleError,
+  errorMessage,
+}) => {
+  const dropdownStyle = {
+    position: "absolute",
+    top: "100%",
+    left: 0,
+    width: dropDownWidth,
+    border: "1px solid #ccc",
+    backgroundColor: "white",
+    listStyle: "none",
+    margin: 0,
+    padding: 0,
+    maxHeight: "150px",
+    overflowY: "auto",
+    zIndex: 1,
+    borderRadius: "5px",
+  };
+
+  return (
+    <div style={{ position: "relative" }}>
+      <label style={{ color: "#888" }}>
+        {label}
+        <input
+          style={{ width: width, fontSize: "14px" }}
+          placeholder={placeholder}
+          type="text"
+          name={name}
+          value={value}
+          onChange={onChange}
+          autoComplete="off"
+        />
+      </label>
+
+      {handleError && (
+        <p
+          style={{
+            position: "absolute",
+            fontSize: "12px",
+            color: "red",
+            top: "40px",
+          }}
+        >
+          {errorMessage}
+        </p>
+      )}
+
+      {filteredOptions.length > 0 && showDropdown && activeField === name && (
+        <ul
+          style={dropdownStyle}
+          onToggle={(isOpen) => setShowDropdown(isOpen)}
+        >
+          {filteredOptions.map((option, index) => (
+            <li
+              key={index}
+              onClick={() => onSelect(name, option)}
+              style={{
+                padding: "5px",
+                cursor: "pointer",
+                fontSize: "14px",
+              }}
+            >
+              {option}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+
+
+
 export {
   CustomInput,
   customSelectInput,
@@ -197,5 +286,6 @@ export {
   CancelButton,
   DraftButton,
   TabButton,
-  FormModel
+  FormModel,
+  FilteredInput
 };
